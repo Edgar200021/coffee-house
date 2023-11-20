@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/icons/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/icons/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/icons/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/icons/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./assets/icons/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#b91d47" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="./css//main.css" />
+    <script src="./burger.js"></script>
+    <script type="module" src="./menu.js" defer></script>
+    <title>Coffee House</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container header__inner">
+          <div class="header__logo logo">
+            <a class="header__logo-link logo__link" href="/">
+              <img
+                class="header__logo-img logo__img"
+                src="./assets/icons//logo.svg"
+                alt="Coffee House"
+              />
+            </a>
+          </div>
+
+          <nav class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link" href="/coffee-house/#favorite"
+                  >Favorite coffee</a
+                >
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="/coffee-house/#about">About</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="/coffee-house/#app">Mobile app</a>
+              </li>
+              <li class="nav__item">
+                <a class="nav__link" href="#menu-footer">Contact us</a>
+              </li>
+              <li class="nav__item">
+                <button class="nav__link" disabled>Menu</button>
+              </li>
+            </ul>
+          </nav>
+
+          <button class="header__btn header__btn--active"></button>
+        </div>
+      </header>
+      <main class="menu-main">
+        <div class="container">
+          <h1 class="second-title">
+            Behind each of our cups hides an
+            <span class="colored">amazing surprise</span>
+          </h1>
+        </div>
+        <section class="menu">
+          <div class="container">
+            <div class="menu__tabs tabs">
+              <ul class="tabs__list">
+                <li class="tabs__item">
+                  <button
+                    disabled
+                    class="tabs__btn btn btn_tab btn_tab_inactive"
+                    data-category="coffee"
+                  >
+                    Coffee
+                  </button>
+                </li>
+                <li class="tabs__item">
+                  <button class="tabs__btn btn btn_tab" data-category="tea">
+                    Tea
+                  </button>
+                </li>
+                <li class="tabs__item">
+                  <button class="tabs__btn btn btn_tab" data-category="dessert">
+                    Dessert
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <ul class="menu__list"></ul>
+
+            <button class="menu__refresh-btn btn btn_slider">&#x21bb;</button>
+          </div>
+        </section>
+      </main>
+      <footer id="menu-footer" class="footer">
+        <div class="container">
+          <div class="footer__inner">
+            <div class="footer__left">
+              <h1 class="footer__title second-title">
+                Sip, Savor, Smile.
+                <span class="colored">It’s coffee time!</span>
+              </h1>
+              <ul class="footer__social-list">
+                <li class="footer__social-list-item">
+                  <a class="footer__social-list-link" href="#">
+                    <svg class="footer__social-list-icon">
+                      <use xlink:href="assets/icons/sprite.svg#twitter" />
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-list-item">
+                  <a class="footer__social-list-link" href="#">
+                    <svg class="footer__social-list-icon" fill="#C1B6AD">
+                      <use xlink:href="assets/icons/sprite.svg#instagram" />
+                    </svg>
+                  </a>
+                </li>
+                <li class="footer__social-list-item">
+                  <a class="footer__social-list-link" href="#">
+                    <svg class="footer__social-list-icon" fill="#C1B6AD">
+                      <use xlink:href="assets/icons/sprite.svg#facebook" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer__right">
+              <span class="footer__contact-descr">Contact us</span>
+              <ul class="footer__contact-list">
+                <li class="footer__contact-item">
+                  <a
+                    href="https://maps.app.goo.gl/EVCq9yA9d3YwX9Nk6"
+                    target="_blank"
+                    class="footer__contact-link"
+                  >
+                    8558 Green Rd., LA
+                  </a>
+                </li>
+                <li class="footer__contact-item">
+                  <a href="tel:+16035550123" class="footer__contact-link"
+                    >+1 (603) 555-0123</a
+                  >
+                </li>
+                <li class="footer__contact-item">
+                  <span class="footer__contact-link"
+                    >Mon-Sat: 9:00 AM – 23:00 PM</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="modal">
+      <div class="modal__container container">
+        <div class="modal__inner"></div>
+      </div>
+    </div>
+  </body>
+</html>

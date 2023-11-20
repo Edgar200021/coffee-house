@@ -1,0 +1,41 @@
+@use '../abstracts/variables' as vars
+@use '../abstracts/mixins' as mixins
+
+.modal
+	position: fixed
+	left: 0
+	top: 0 
+	height: 100%
+	width: 100%
+	z-index: 60
+	background-color: vars.$color-backdrop
+	transform: scale(0)
+	transition: transform .5s ease
+	pointer-events: none
+	&_active
+		transform: scale(1)
+		pointer-events: auto
+		& .modal__inner
+			transform: scale(1)
+	&__container
+		height: 100%
+		display: flex
+		justify-content: center
+		align-items: center
+	&__inner
+		transform: scale(0)
+		transition: transform 1.5s ease
+		height: auto
+		max-width: 800px
+		width: 100%
+		margin: 0 auto
+		padding: 16px
+		border-radius: vars.$main-radius
+		display: flex 
+		column-gap: 20px
+		background-color: vars.$color-secondary
+		@include mixins.respond('tablet')
+			max-width: 688px
+		@include mixins.respond('mini-phone')
+			max-width: 342px
+

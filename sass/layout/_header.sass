@@ -1,0 +1,52 @@
+@use '../abstracts/variables' as vars
+@use '../abstracts/mixins' as mixins
+
+.header
+	padding-top: 20px
+	margin-bottom: 26px
+	&__inner
+		display: flex
+		align-items: center
+		justify-content: space-between
+		gap: 30px
+	&__logo
+		margin-right: 335px
+		z-index: 46
+		@include mixins.respond('desktop')
+			margin-right: clamp(40px, 6vw, 250px)
+	&__nav
+		flex-grow: 1
+	&__btn
+		position: relative
+		display: none
+		cursor: pointer
+		border-radius: 100%
+		width: 44px
+		height: 44px
+		border: 1px solid vars.$color-gray
+		@include mixins.respond('mini-tablet')
+			position: relative
+			display: inline-block
+			z-index: 50
+		&::after,&::before
+			display: inline-block
+			content: ''
+			position: absolute
+			left: 50%
+			transform: translateX(-50%)
+			width: 16px
+			height: 1.5px
+			background: $color-primary
+			border-radius: 5px
+			transition: all .3s ease
+		&::before
+			top: 16px
+		&::after
+			bottom: 16px
+		&_active
+			&::before
+				transform: translate(-50%, -50%) rotate(45deg)
+				top: 49%
+			&::after
+				bottom: 48%
+				transform: translate(-50%, -50%) rotate(-45deg)

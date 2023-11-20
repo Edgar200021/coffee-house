@@ -1,0 +1,41 @@
+@use '../abstracts/variables' as vars
+@use '../abstracts/mixins' as mixins
+	
+.menu-main section
+	margin-bottom: vars.$section-spacing
+
+.menu-main h1
+	max-width: 800px
+	margin: 0 auto
+	margin-bottom: 40px
+	text-align: center
+
+.menu
+	&__tabs
+		max-width: 356px
+		margin: 0 auto
+		margin-bottom: 40px
+	&__list
+		display: flex
+		flex-wrap: wrap
+		gap: 35px
+		justify-content: center
+		@include mixins.respond('mini-tablet')
+			margin-bottom: 33px
+			gap: 37px
+		
+	&__refresh-btn
+		transform: rotate(45deg)
+		font-size: 26px 
+		justify-content: center
+		align-items: center
+		margin: 0 auto
+		display: none
+		transition: background-color .3s ease, color .3s ease
+		@include mixins.hover()
+			&:hover
+				background-color: vars.$color-gray
+				color: vars.$color-secondary
+		@include mixins.respond('mini-tablet')
+			display: flex
+

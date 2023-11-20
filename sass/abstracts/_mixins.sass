@@ -1,0 +1,57 @@
+@use '../abstracts/variables' as vars
+	
+@mixin font($size: 16px, $weight: 600, $height)
+	font-size: $size 
+	font-weight: $weight
+	line-height: $height
+
+@mixin hover()
+	@media (hover: hover)
+		@content
+	@media (hover: none)
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+
+@mixin link()
+	position: relative
+	padding-bottom: 8px
+	border-color: inherit
+	transition: all .3s ease
+	@include hover()
+		&:hover::after
+			width: 100%
+			opacity: 1
+	&::after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 50%
+		transform: translateX(-50%)
+		width: 0px
+		height: 2px
+		background-color: vars.$color-primary
+		transition: all .6s ease
+		opacity: 0
+
+
+
+
+@mixin respond($breakpoint)
+	@if $breakpoint == mobile-first
+		@media (min-width: 320px) and (max-width: 767px)
+			@content
+	@if $breakpoint == mini-phone
+		@media (max-width: 400px)
+			@content
+	@if $breakpoint == phone
+		@media (max-width: 600px)
+			@content
+	@if $breakpoint == mini-tablet
+		@media (max-width: 768px)
+			@content
+	@if $breakpoint == tablet
+		@media (max-width: 1024px)
+			@content
+	@if $breakpoint == desktop
+		@media (max-width: 1280px)
+			@content

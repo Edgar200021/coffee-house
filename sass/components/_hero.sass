@@ -1,0 +1,70 @@
+@use '../abstracts/variables' as vars
+@use '../abstracts/mixins' as mixins
+	
+.hero
+	&__inner
+		position: relative
+		padding: 100px clamp(60px, 7.5vw, 100px)
+		border-radius: vars.$main-radius
+		overflow: hidden
+		height: 644px
+		@include mixins.respond('mobile-first')
+			padding: clamp(60px, 12vw, 100px) clamp(16px, 4vw, 60px)
+			height: clamp(552px, 80%, 644px)
+	&__video
+		position: absolute
+		left: 0
+		top: 0
+		z-index: -5
+	
+	&__content
+		max-width: 530px
+		width: 100%
+		color: vars.$color-secondary
+		& *:not(:last-child)
+			margin-bottom: 40px
+	&__text
+		@include mixins.font(16px, 400, 150%)
+	&__btn
+		position: relative
+		display: inline-block
+		color: vars.$color-primary
+		text-align: center
+		&::after
+			content: ''
+			display: inline-block
+			position: absolute
+			background: url('../../assets/icons/coffee-cup.svg') center/cover no-repeat
+			width: 20px
+			height: 20px
+			top: 50%
+			left: 63%
+			transform: translate(-63%, -55%)
+			opacity: 0
+			transition: opacity .4s ease
+			@include mixins.respond('mini-tablet')
+				opacity: 1
+		@include mixins.hover()
+			&:hover::after
+				opacity: 1
+			&:hover span
+				transform: translateX(-12px)
+		&-text
+			display: inline-block
+			transition: transform .5s ease
+			@include mixins.respond('mini-tablet')
+				transform: translateX(-12px)
+
+@media(min-aspect-ratio: 16/9)
+	.hero__video
+		width: 100%
+		height: auto
+		
+
+
+@media(max-aspect-ratio: 16/9)
+	.hero__video
+		width: auto
+		height: 100%
+		
+

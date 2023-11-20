@@ -1,0 +1,62 @@
+@use '../abstracts/variables' as vars
+@use '../abstracts/mixins' as mixins
+	
+.main section
+	margin-bottom: vars.$section-spacing
+
+.favorite
+	&__title
+		text-align: center
+		margin-bottom: 40px
+	&__slider
+		position: relative
+		margin-bottom: 30px
+		&-container
+			display: flex
+			max-width: 480px
+			overflow: hidden
+			margin: 0 auto
+		&-dots-container
+			max-width: 145px
+			margin: 0 auto
+		&-dots
+			position: relative
+			display: inline-block
+			width: 40px
+			height: 4px
+			border-radius: 100px
+			background-color: vars.$color-border-light
+			transition: background-color .7s ease
+			span
+				display: block
+				border-radius: 100px
+				width: 0
+				height: 100%
+				background-color: vars.$color-gray
+				transition: width .4s ease
+			&_active span
+					transition: width 6.5s ease
+					width: 100%
+			&:not(:last-child)
+				margin-right: 8px
+	&__favorite-drink
+		margin: 0 auto
+		min-width: 100%
+		transition: transform .8s ease
+	&__btn
+		display: inline-block
+		position: absolute
+		top: 54%
+		transition: all .3s ease
+		@include mixins.respond('mini-tablet')
+			top: 58%
+		@include mixins.respond('mini-phone')
+			display: none
+		@include mixins.hover()
+			&:hover
+				background-color: vars.$color-gray
+				color: vars.$color-secondary
+		&-left
+			left: -0
+		&-right
+			right: 0

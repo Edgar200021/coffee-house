@@ -1,0 +1,51 @@
+@use '../abstracts/mixins' as mixins
+@use '../abstracts/variables' as vars
+	 
+.app
+	&__inner
+		display: flex
+		align-items: center
+		justify-content: space-between
+		@include mixins.respond('mini-tablet')
+			flex-direction: column
+			gap: 100px 0
+		@include mixins.respond('mobile-first')
+			gap: clamp(35px, 7vw, 100px)
+	&__content
+		max-width: 630px
+		@include mixins.respond('mini-tablet')
+			max-width: 100%
+		& >*:not(:last-child)
+			margin-bottom: 40px
+	&__text
+		@include mixins.font(16px, 400, 150%)
+	&__btns
+		display: flex
+		gap: 0 20px
+		@include mixins.respond('phone')
+			flex-direction: column
+			gap:  20px 0
+	&__btn
+		padding: 12px 20px
+		display: flex
+		align-items: center
+		gap: 0 8px
+		transition: background-color .7s ease, color .7s ease
+		@include mixins.hover()
+			&:hover
+				background-color: vars.$color-gray
+				color: vars.$color-secondary
+				& svg
+					fill: vars.$color-secondary
+		&-icon
+			transition: fill .7s ease
+			width: 36px
+			height: 36px
+		&-text
+			display: inline-flex
+			flex-direction: column
+			align-items: start
+			gap: 5px 0
+		&-suptext
+			@include mixins.font(10px, 600, 140% )
+

@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as vars
+@use '../abstracts/mixins' as mixins
+	
+.container
+	max-width: vars.$desktop-container-width
+	margin: 0 auto
+	padding: 0 vars.$main-padding
+	@include mixins.respond('mobile-first')
+		padding: 0 clamp(vars.$main-padding-phone, 2vw, vars.$main-padding)
+	
+
+.colored
+	color: vars.$color-accent
+	font-style: italic
+
+.order
+	order: 1
+
+.hidden
+	display: none
+
+
+.overflow-hidden
+	overflow: hidden
+
+.active-label 
+	background-color: vars.$color-gray
+	color: vars.$color-secondary
+	&::before
+		background-color: vars.$color-secondary

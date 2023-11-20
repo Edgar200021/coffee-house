@@ -1,0 +1,22 @@
+
+@use '../abstracts/mixins' as mixins
+
+	
+.favorite-drink
+	max-width: 480px
+	width: 100%
+	text-align: center
+	&__img-container
+		max-height: 480px
+		margin-bottom: 20px
+		@include mixins.respond('mobile-first')
+			margin-bottom: 16px
+	&__img
+		object-fit: cover
+	&__title
+		margin-bottom: 16px
+	&__description
+		margin-bottom: 16px
+		@include mixins.font(16px, 400, 150%)
+	&__price
+		@include mixins.font(24px, 600, 125%)

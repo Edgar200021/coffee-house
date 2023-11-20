@@ -1,0 +1,18 @@
+@use '../abstracts/mixins' as mixins
+
+	
+.tabs
+	&__list
+		display: flex
+		justify-items: start
+		align-items: center
+		gap: 0 16px
+		@include mixins.respond('mini-tablet')
+			gap: 0 8px
+	&__item
+		&:first-child button::before
+			background-image: url('../../assets/icons/coffee.svg')
+		&:nth-child(2) button::before
+			background-image: url('../../assets/icons/tea.svg')
+		&:last-child button::before
+			background-image: url('../../assets/icons/cake.svg')

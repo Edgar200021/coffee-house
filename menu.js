@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
         (productsHtml += `<li class="menu__item card" data-id=${product.id}>
 	  <div class="card__img-box">
 		<img
-		  src="./assets//img/drinks/${product.category}-${i + 1}.jpg"
+		  src="./assets/img/drinks/${product.category}-${product.id}.jpg"
 		  alt=${product.name}
 		  class="card__img"
 		/>
@@ -47,7 +47,7 @@ window.addEventListener('load', () => {
 
   renderProducts(category, count)
 
-  tabsList.addEventListener('click', e => {
+  tabsList.addEventListener('click', async e => {
     if (!e.target.matches('.tabs__btn')) return
 
     const button = e.target
@@ -117,7 +117,9 @@ window.addEventListener('load', () => {
                   />
                 </div>
                 <div class="single-product__info">
-                  <h2 class="single-product__title third-title">Moroccan</h2>
+                  <h2 class="single-product__title third-title">${
+                    product.name
+                  }</h2>
                   <p class="single-product__description">
                     ${product.description}
                   </p>

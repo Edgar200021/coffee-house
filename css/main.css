@@ -417,6 +417,10 @@ body {
   background-color: #E1D4C9;
 }
 
+.fade {
+  opacity: 0;
+}
+
 .logo {
   min-width: 100px;
   max-width: 100px;
@@ -1539,6 +1543,7 @@ body {
   flex-wrap: wrap;
   gap: 35px;
   justify-content: center;
+  transition: opacity 0.6s ease;
 }
 @media (max-width: 768px) {
   .menu__list {

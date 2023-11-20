@@ -20,10 +20,10 @@
 		flex-wrap: wrap
 		gap: 35px
 		justify-content: center
+		transition: opacity .6s ease
 		@include mixins.respond('mini-tablet')
 			margin-bottom: 33px
 			gap: 37px
-		
 	&__refresh-btn
 		transform: rotate(45deg)
 		font-size: 26px 
@@ -38,4 +38,3 @@
 				color: vars.$color-secondary
 		@include mixins.respond('mini-tablet')
 			display: flex
-

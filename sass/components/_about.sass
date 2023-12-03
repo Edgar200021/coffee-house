@@ -4,6 +4,7 @@
 .about
 	&__title
 		margin-bottom: 40px
+		letter-spacing: -0.04px
 		& span br
 			@include mixins.respond('mini-phone')
 				display: inline
@@ -37,6 +38,8 @@
 		object-fit: cover
 		transform: scale(1.1)
 		transition: transform .3s ease
+		@include mixins.respond('mini-tablet')
+			transform: scale(1.2)	
 		&-box
 			border-radius: 20px
 			overflow: hidden

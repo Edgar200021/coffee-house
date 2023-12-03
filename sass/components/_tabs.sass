@@ -6,8 +6,10 @@
 		display: flex
 		justify-items: start
 		align-items: center
-		gap: 0 16px
+		gap: 0 14px
 		@include mixins.respond('mini-tablet')
+			gap: 0 16px
+		@include mixins.respond('phone')
 			gap: 0 8px
 	&__item
 		&:first-child button::before

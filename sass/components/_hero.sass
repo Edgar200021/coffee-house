@@ -25,6 +25,8 @@
 			margin-bottom: 40px
 	&__text
 		@include mixins.font(16px, 400, 150%)
+		@include mixins.respond('phone')
+			letter-spacing: -0.2px
 	&__btn
 		position: relative
 		display: inline-block

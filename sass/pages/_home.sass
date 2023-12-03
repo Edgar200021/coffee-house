@@ -10,7 +10,9 @@
 		margin-bottom: 40px
 	&__slider
 		position: relative
-		margin-bottom: 30px
+		margin-bottom: 5px
+		@include mixins.respond('phone')
+			margin-bottom: 25px
 		&-container
 			display: flex
 			max-width: 480px
@@ -46,10 +48,10 @@
 	&__btn
 		display: inline-block
 		position: absolute
-		top: 54%
+		top: 52%
 		transition: all .3s ease
 		@include mixins.respond('mini-tablet')
-			top: 58%
+			top: 56%
 		@include mixins.respond('mini-phone')
 			display: none
 		@include mixins.hover()

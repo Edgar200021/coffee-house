@@ -3,7 +3,9 @@
 
 .header
 	padding-top: 20px
-	margin-bottom: 26px
+	margin-bottom: 20px
+	@include mixins.respond('desktop')
+		margin-bottom: 14px
 	&__inner
 		display: flex
 		align-items: center
@@ -28,6 +30,8 @@
 			position: relative
 			display: inline-block
 			z-index: 50
+		@include mixins.respond('phone')
+			margin-right: 5px
 		&::after,&::before
 			display: inline-block
 			content: ''

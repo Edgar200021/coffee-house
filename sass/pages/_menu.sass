@@ -1,28 +1,34 @@
 @use '../abstracts/variables' as vars
 @use '../abstracts/mixins' as mixins
 	
-.menu-main section
-	margin-bottom: vars.$section-spacing
-
 .menu-main h1
 	max-width: 800px
 	margin: 0 auto
-	margin-bottom: 40px
+	margin-bottom: 38px
 	text-align: center
+	@include mixins.respond('tablet')
+		margin-bottom: 40px
+	@include mixins.respond('mini-phone')
+		max-width: 340px
+
+
 
 .menu
+	margin-bottom: calc(vars.$section-spacing + 5px)
 	&__tabs
 		max-width: 356px
 		margin: 0 auto
 		margin-bottom: 40px
+		@include mixins.respond('tablet')
+			max-width: 370px
 	&__list
 		display: flex
 		flex-wrap: wrap
-		gap: 35px
+		gap: 38px
 		justify-content: center
 		transition: opacity .6s ease
 		@include mixins.respond('mini-tablet')
-			margin-bottom: 33px
+			margin-bottom: 37px
 			gap: 37px
 	&__refresh-btn
 		transform: rotate(45deg)
@@ -38,3 +44,5 @@
 				color: vars.$color-secondary
 		@include mixins.respond('mini-tablet')
 			display: flex
+		@include mixins.respond('phone')
+

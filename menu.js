@@ -1,5 +1,5 @@
-import products from './products.json' assert { type: 'json' }
-
+// import products from './products.json' assert { type: 'json' }
+import * as products from './products.json';
 window.addEventListener('load', () => {
   const productList = document.querySelector('.menu__list'),
     tabsList = document.querySelector('.tabs__list'),
